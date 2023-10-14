@@ -20,14 +20,14 @@ class PlateController extends Controller
         public function store(Request $request)
         {
             $plateType = new PlateType();
-            $plateType->plate_type = $request->plate_type;
+            $plateType->type = $request->type;
             $plateType->save();
         }
 
         public function update(Request $request)
         {
             $plateType = PlateType::findOrFail($request->id);
-            $plateType->plate_type = $request->plate_type;
+            $plateType->type = $request->type;
             $plateType->save();
         }
 
