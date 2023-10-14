@@ -22,16 +22,16 @@ Route::get('/', function () {
 Route::get('/plates', 'PlateController@get');
 
 // Ruta para encontrar una placa por ID
-Route::get('/placas/{id}', 'PlateController@show');
+Route::get('/plates/{id}', 'PlateController@show');
 
 // Ruta para crear una placa
-Route::post('/placas', 'PlateController@store');
+Route::post('/plates', 'PlateController@store');
 
 // Ruta para actualizar una placa
-Route::put('/placas/{id}', 'PlateController@update');
+Route::put('/plates/{id}', 'PlateController@update');
 
 // Ruta para eliminar una placa
-Route::delete('/placas/{id}', 'PlateController@delete');
+Route::delete('/plates/{id}', 'PlateController@delete');
 
 // Rutas para listar todos los vehículos
 Route::get('/vehicles', 'VehicleController@get');

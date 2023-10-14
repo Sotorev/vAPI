@@ -41,7 +41,7 @@ class PlateController extends Controller
         {
             $plateType = PlateType::findOrFail($request->id);
             if ($plateType) {
-                return ['plate_type' => $plateType];
+                return ['type' => $plateType];
             }
             return ['No se encontraron datos'];
         }

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class PlateType extends Model
 {
     use HasFactory;
-    protected $fillable = ['plate_type'];
+    protected $fillable = ['type'];
 }
