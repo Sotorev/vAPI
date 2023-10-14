@@ -23,7 +23,7 @@ Route::get('/', function () {
 Route::prefix('plate')->group(function () {
     Route::get('/', [PlateController::class, 'get']);
     Route::post('/', [PlateController::class, 'store']);
-    Route::put('/', [PlateController::class, 'update']);
+    Route::put('/{id}', [PlateController::class, 'update']);
     Route::delete('/', [PlateController::class, 'delete']);
     Route::get('/{id}', [PlateController::class, 'show']);
 });
@@ -32,7 +32,7 @@ Route::prefix('plate')->group(function () {
 Route::prefix('vehicle')->group(function () {
     Route::get('/', [VehicleController::class, 'get']);
     Route::post('/', [VehicleController::class, 'store']);
-    Route::put('/', [VehicleController::class, 'update']);
+    Route::put('/{id}', [VehicleController::class, 'update']);
     Route::delete('/', [VehicleController::class, 'delete']);
     Route::get('/{id}', [VehicleController::class, 'show']);
 });
