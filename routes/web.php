@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Rutas para listar todas las placas
+Route::get('/plates', 'PlateController@get');
+
+// Ruta para encontrar una placa por ID
+Route::get('/placas/{id}', 'PlateController@show');
