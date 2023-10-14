@@ -19,32 +19,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Rutas para listar todas las placas
-Route::get('/plates', 'PlateController@get');
+//Rutas para placas
+Route::prefix('plate')->group(function () {
+    Route::get('/', [PlateController::class, 'get']);
+    Route::post('/', [PlateController::class, 'store']);
+    Route::put('/', [PlateController::class, 'update']);
+    Route::delete('/', [PlateController::class, 'delete']);
+    Route::get('/{id}', [PlateController::class, 'show']);
+});
 
-// Ruta para encontrar una placa por ID
-Route::get('/plates/{id}', 'PlateController@show');
-
-// Ruta para crear una placa
-Route::post('/plates', 'PlateController@store');
-
-// Ruta para actualizar una placa
-Route::put('/plates/{id}', 'PlateController@update');
-
-// Ruta para eliminar una placa
-Route::delete('/plates/{id}', 'PlateController@delete');
-
-// Rutas para listar todos los vehículos
-Route::get('/vehicles', 'VehicleController@get');
-
-// Ruta para encontrar un vehículo por ID
-Route::get('/vehicles/{id}', 'VehicleController@show');
-
-// Ruta para crear un vehículo
-Route::post('/vehicles', 'VehicleController@store');
-
-// Ruta para actualizar un vehículo
-Route::put('/vehicles/{id}', 'VehicleController@update');
-
-// Ruta para eliminar un vehículo
-Route::delete('/vehicles/{id}', 'VehicleController@delete');
+//Rutas para vehiculos
+Route::prefix('vehicle')->group(function () {
+    Route::get('/', [VehicleController::class, 'get']);
+    Route::post('/', [VehicleController::class, 'store']);
+    Route::put('/', [VehicleController::class, 'update']);
+    Route::delete('/', [VehicleController::class, 'delete']);
+    Route::get('/{id}', [VehicleController::class, 'show']);
+});
